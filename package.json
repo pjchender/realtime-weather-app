@@ -2,6 +2,7 @@
   "name": "realtime-weather-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://pjchender.github.io/realtime-weather-app",
   "dependencies": {
     "@emotion/core": "^10.0.21",
     "@emotion/styled": "^10.0.17",
