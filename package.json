@@ -6,6 +6,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.27",
     "@emotion/styled": "^10.0.27",
+    "dayjs": "^1.8.21",
     "emotion-theming": "^10.0.27",
     "gh-pages": "^2.2.0",
     "react": "^16.12.0",

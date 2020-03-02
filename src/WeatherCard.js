@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import dayjs from 'dayjs';
 import WeatherIcon from './WeatherIcon.js';
 import { ReactComponent as AirFlowIcon } from './images/airFlow.svg';
 import { ReactComponent as RainIcon } from './images/rain.svg';
@@ -155,7 +156,7 @@ const WeatherCard = (props) => {
         {new Intl.DateTimeFormat('zh-TW', {
           hour: 'numeric',
           minute: 'numeric',
-        }).format(new Date(observationTime))}{' '}
+        }).format(dayjs(observationTime))}{' '}
         {isLoading ? <LoadingIcon /> : <RefreshIcon />}
       </Refresh>
     </WeatherCardWrapper>
