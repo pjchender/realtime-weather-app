@@ -6,12 +6,12 @@
   "dependencies": {
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
-    "dayjs": "^1.8.21",
+    "dayjs": "^1.8.24",
     "emotion-theming": "^10.0.27",
     "gh-pages": "^2.2.0",
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0",
-    "react-scripts": "^3.4.0"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "^3.4.1"
   },
   "scripts": {
     "predeploy": "npm run build",
