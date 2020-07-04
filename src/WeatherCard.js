@@ -139,7 +139,7 @@ const WeatherCard = (props) => {
           {Math.round(temperature)} <Celsius>°C</Celsius>
         </Temperature>
         <WeatherIcon
-          currentWeatherCode={weatherCode}
+          weatherCode={weatherCode}
           moment={moment || 'day'}
         />
       </CurrentWeather>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import styled from '@emotion/styled';
 import { ReactComponent as DayThunderstorm } from './images/day-thunderstorm.svg';
 import { ReactComponent as DayClear } from './images/day-clear.svg';
@@ -70,29 +70,22 @@ const IconContainer = styled.div`
   }
 `;
 
-const weatherCode2Type = (weatherCode) =>
-  Object.entries(weatherTypes).reduce(
-    (currentWeatherType, [weatherType, weatherCodes]) =>
+const weatherCode2Type = (weatherCode) => {
+  const [weatherType] =
+    Object.entries(weatherTypes).find(([weatherType, weatherCodes]) =>
       weatherCodes.includes(Number(weatherCode))
-        ? weatherType
-        : currentWeatherType,
-    ''
-  );
+    ) || [];
 
-const WeatherIcon = ({ currentWeatherCode, moment }) => {
-  const [currentWeatherIcon, setCurrentWeatherIcon] = useState('isClear');
+  return weatherType;
+};
 
-  const theWeatherIcon = useMemo(() => weatherCode2Type(currentWeatherCode), [
-    currentWeatherCode,
+const WeatherIcon = ({ weatherCode, moment }) => {
+  const weatherType = useMemo(() => weatherCode2Type(weatherCode), [
+    weatherCode,
   ]);
+  const weatherIcon = weatherIcons[moment][weatherType];
 
-  useEffect(() => {
-    setCurrentWeatherIcon(theWeatherIcon);
-  }, [theWeatherIcon]);
-
-  return (
-    <IconContainer>{weatherIcons[moment][currentWeatherIcon]}</IconContainer>
-  );
+  return <IconContainer>{weatherIcon}</IconContainer>;
 };
 
 export default WeatherIcon;
